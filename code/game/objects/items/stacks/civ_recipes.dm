@@ -95,19 +95,39 @@
 		recipes += new/datum/stack_recipe("[display_name] spoon", /obj/item/weapon/material/kitchen/utensil/spoon, TRUE, _on_floor = TRUE, _supplied_material = "[name]")
 	for(var/i in chosen_list)
 		if(i[1]== "[type]/" && current_res[1]>=text2num(i[9]) && current_res[2]>=text2num(i[10]) && current_res[3]>=text2num(i[11]) && map && map.ordinal_age <= text2num(i[12]))
+			var/secondary_resource_list
+			if (length(i) > 13)
+				var/material/secondary_resource_material = get_material_by_name(i[14])
+				var/secondary_resource_type
+				var/secondary_resource_name
+				var/secondary_resource_required = 0
+
+				if (secondary_resource_material) // This does depend on the stack_type variable either existing or being set for the material.
+					secondary_resource_type = secondary_resource_material.stack_type
+					secondary_resource_name = secondary_resource_material.display_name
+					secondary_resource_required = text2num(i[15])
+
+				else
+					secondary_resource_type = text2path(i[14])
+					secondary_resource_name = i[15]
+					if(ispath(secondary_resource_type, /obj/item/stack))
+						secondary_resource_required = text2num(i[16])
+
+				secondary_resource_list = list("type" = secondary_resource_type, "name" = secondary_resource_name, "required" = secondary_resource_required)
+
 			var/supmat = i[13]
 			if (supmat == "null")
 				supmat = null
 			if (i[8] == "none")
-				recipes += new/datum/stack_recipe(i[2], text2path(i[3]), text2num(i[4]),  _time = text2num(i[5]), _one_per_turf = text2num(i[6]), _on_floor = text2num(i[7]), _supplied_material = supmat)
+				recipes += new/datum/stack_recipe(i[2], text2path(i[3]), text2num(i[4]),  _time = text2num(i[5]), _one_per_turf = text2num(i[6]), _on_floor = text2num(i[7]), _supplied_material = supmat, _secondary_resource = secondary_resource_list)
 			else
 				var/exists = FALSE
 				for (var/datum/stack_recipe_list/A in recipes)
 					if (A.title == i[8])
 						exists = TRUE
-						A.recipes += new/datum/stack_recipe(i[2], text2path(i[3]), text2num(i[4]),  _time = text2num(i[5]), _one_per_turf = text2num(i[6]), _on_floor = text2num(i[7]), _supplied_material = supmat)
+						A.recipes += new/datum/stack_recipe(i[2], text2path(i[3]), text2num(i[4]),  _time = text2num(i[5]), _one_per_turf = text2num(i[6]), _on_floor = text2num(i[7]), _supplied_material = supmat, _secondary_resource = secondary_resource_list)
 				if (!exists)
-					recipes += new/datum/stack_recipe_list(i[8], list(new/datum/stack_recipe(i[2], text2path(i[3]), text2num(i[4]),  _time = text2num(i[5]), _one_per_turf = text2num(i[6]), _on_floor = text2num(i[7]), _supplied_material = supmat)))
+					recipes += new/datum/stack_recipe_list(i[8], list(new/datum/stack_recipe(i[2], text2path(i[3]), text2num(i[4]),  _time = text2num(i[5]), _one_per_turf = text2num(i[6]), _on_floor = text2num(i[7]), _supplied_material = supmat, _secondary_resource = secondary_resource_list)))
 
 datum/admins/proc/print_crafting_recipes()
 	set category = "Debug"

@@ -233,6 +233,8 @@
 		var/obj/item/stack/arrowhead/AH = W
 		if(istype(W, /obj/item/stack/arrowhead/stone))
 			new/obj/item/ammo_casing/arrow/stone(user.loc)
+		else if(istype(W, /obj/item/stack/arrowhead/sandstone))
+			new/obj/item/ammo_casing/arrow/sandstone(user.loc)
 		else if(istype(W, /obj/item/stack/arrowhead/copper))
 			new/obj/item/ammo_casing/arrow/copper(user.loc)
 		else if(istype(W, /obj/item/stack/arrowhead/iron))
@@ -275,6 +277,8 @@
 		var/obj/item/stack/arrowhead/AH = W
 		if(istype(W, /obj/item/stack/arrowhead/stone))
 			new/obj/item/ammo_casing/bolt/stone(user.loc)
+		else if(istype(W, /obj/item/stack/arrowhead/sandstone))
+			new/obj/item/ammo_casing/bolt/sandstone(user.loc)
 		else if(istype(W, /obj/item/stack/arrowhead/copper))
 			new/obj/item/ammo_casing/bolt/copper(user.loc)
 		else if(istype(W, /obj/item/stack/arrowhead/iron))
@@ -312,6 +316,11 @@
 	name = "stone arrowhead"
 	desc = "Attach it to a arrow shaft."
 	icon_state = "stone_arrowhead"
+
+/obj/item/stack/arrowhead/sandstone
+	name = "sandstone arrowhead"
+	desc = "Attach it to a arrow shaft."
+	icon_state = "sandstone_arrowhead"
 
 /obj/item/stack/arrowhead/copper
 	name = "copper arrowhead"

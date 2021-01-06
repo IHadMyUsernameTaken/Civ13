@@ -163,8 +163,8 @@ RECIPE: /material/wood/,chair,/obj/structure/bed/chair/wood,4,50,1,1,furniture,1
 RECIPE: /material/wood/,coffin,/obj/structure/closet/coffin,4,50,1,1,furniture,41,0,0,8,null
 RECIPE: /material/wood/,wardrobe,/obj/structure/closet/cabinet,5,80,1,1,furniture,41,0,0,8,null
 RECIPE: /material/wood/,cabinet,/obj/structure/closet/cabinet/ceiling,4,60,1,1,furniture,41,0,0,8,null
-RECIPE: /material/wood/,grandfather clock,/obj/structure/TV/grandfather,9,160,1,1,furniture,42,0,0,8,null
-RECIPE: /material/wood/,standing clock,/obj/structure/wallclock,6,150,1,1,furniture,110,0,0,8,null
+RECIPE: /material/wood/,grandfather clock,/obj/structure/TV/grandfather,9,160,1,1,furniture,42,0,0,8,null,glass,2
+RECIPE: /material/wood/,standing clock,/obj/structure/wallclock,6,150,1,1,furniture,110,0,0,8,null,glass,2
 RECIPE: /material/wood/,geta sandals,/obj/item/clothing/shoes/geta,1,40,0,1,shoes & clothing,24,0,38,8,null
 RECIPE: /material/wood/,cigar case,/obj/item/weapon/storage/fancy/cigar,2,80,1,1,entertainment & other,65,0,0,8,null
 RECIPE: /material/wood/,deck of cards,/obj/item/weapon/deck/cards,2,80,1,1,entertainment & other,65,0,0,8,null
@@ -215,7 +215,7 @@ RECIPE: /material/copper/,ammo clip (5),/obj/item/ammo_magazine/emptyclip,1,30,0
 RECIPE: /material/copper/,ammo belt (100),/obj/item/ammo_magazine/emptybelt,7,25,0,1,ammunition,125,0,0,8,null
 RECIPE: /material/copper/,grenade casing,/obj/item/stack/ammopart/casing/grenade,2,35,0,1,ammunition,115,0,0,8,null
 
-RECIPE: /material/copper/,electronic circuits,/obj/item/stack/material/electronics,1,80,0,1,none,95,0,0,8,null
+RECIPE: /material/copper/,electronic circuits,/obj/item/stack/material/electronics,1,80,0,1,none,95,0,0,8,null,iron,1
 RECIPE: /material/copper/,telegraph,/obj/structure/telegraph,12,90,1,1,machinery,105,0,0,8,null
 RECIPE: /material/copper/,teleprinter,/obj/structure/teleprinter,12,120,1,1,machinery,105,0,0,8,null
 

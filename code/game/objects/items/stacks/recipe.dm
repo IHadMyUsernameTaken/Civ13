@@ -11,8 +11,9 @@
 	var/one_per_turf = FALSE
 	var/on_floor = FALSE
 	var/use_material
+	var/list/secondary_resource // An associative list that has data related to a secondary resource used for this recipe.
 
-	New(_title, _result_type, _req_amount = 1, _res_amount = 1, _max_res_amount = 1, _time = 0, _one_per_turf = FALSE, _on_floor = FALSE, _supplied_material = null)
+	New(_title, _result_type, _req_amount = 1, _res_amount = 1, _max_res_amount = 1, _time = 0, _one_per_turf = FALSE, _on_floor = FALSE, _supplied_material = null, _secondary_resource = null)
 
 		title = _title
 		result_type = _result_type
@@ -23,6 +24,7 @@
 		one_per_turf = _one_per_turf
 		on_floor = _on_floor
 		use_material = _supplied_material
+		secondary_resource = _secondary_resource
 /*
  * Recipe list datum
  */

@@ -115,8 +115,8 @@
 				var/tmpi = replacetext(i, "RECIPE: ", "")
 				var/list/current = splittext(tmpi, ",")
 				craftlist_lists["global"] += list(current)
-				if (current.len != 13)
-					world.log << "Error! Recipe [current[2]] has a length of [current.len] (should be 13)."
+				if (current.len < 13)
+					world.log << "Error! Recipe [current[2]] has a length of [current.len] (shouldn't be less than 13)."
 /obj/map_metadata/abashiri/proc/check_points()
 	for(var/i in points)
 		if (i[1] != "Guards")

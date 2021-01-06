@@ -1082,8 +1082,8 @@ var/list/atom_types = null
 					var/list/current = splittext(tmpj, ",")
 					craftlist_lists[current_list] += list(current)
 					world.log << "LOADED: [current_list]"
-					if (current.len != 13)
-						world.log << "Error! Recipe [current[2]] has a length of [current.len] (should be 13)."
+					if (current.len < 13)
+						world.log << "Error! Recipe [current[2]] has a length of [current.len] (shouldn't be less than 13)."
 		else
 			admin_notice("<span class='danger'>Failed to load crafting recipes!</span>", R_DEBUG)
 	if (map)

@@ -629,6 +629,7 @@ var/list/name_to_material
 	hardness = 10
 	door_icon_base = "wood"
 	flags = MATERIAL_PADDING
+	stack_type = /obj/item/stack/material/cloth
 
 /material/rettedfabric
 	name = "rettedfabric"
@@ -697,6 +698,7 @@ var/list/name_to_material
 	icon_colour = "#5C4831"
 	hardness = 25
 	flags = MATERIAL_PADDING
+	stack_type = /obj/item/stack/material/leather
 
 /material/leather/dark
 	name = "darkleather"
